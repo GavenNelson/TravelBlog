@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="destination">
+  <div class="destination-detail">
     <h1>{{ destination.name }}</h1>
-    <img src="{{ destination.image.url }}" alt="{{ destination.name }}" />
+    <img class="destination-detail-img" src="{{ destination.image.url }}" alt="{{ destination.name }}" />
 
     <h2>General Information</h2>
     <p>{{ destination.general_info }}</p>
