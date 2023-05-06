@@ -5,6 +5,7 @@ class Destination(models.Model):
     image = models.ImageField(upload_to='destination_images/')
     general_info = models.TextField()
     costs = models.TextField()
+    travel_website_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name

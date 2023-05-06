@@ -1,7 +1,20 @@
-<h1>{{ destination.name }}</h1>
-<img src="{{ destination.image.url }}" alt="{{ destination.name }}" />
+{% extends 'base.html' %}
 
-<h2>General Information</h2>
-<p>{{ destination.general_info }}</p>
-<h2>Costs</h2>
-<p>{{ destination.costs }}</p>
+{% block content %}
+  <div class="destination">
+    <h1>{{ destination.name }}</h1>
+    <img src="{{ destination.image.url }}" alt="{{ destination.name }}" />
+
+    <h2>General Information</h2>
+    <p>{{ destination.general_info }}</p>
+    <h2>Costs</h2>
+    <p>{{ destination.costs }}</p>
+
+    <h2>Travel Website URL</h2>
+    {% if destination.travel_website_url %}
+      <p><a href="{{ destination.travel_website_url }}" target="_blank" rel="noopener noreferrer" class="travel-link">{{ destination.name }} Travel Link</a></p>
+    {% else %}
+      <p>No travel website URL provided.</p>
+    {% endif %}
+  </div>
+{% endblock content %}
